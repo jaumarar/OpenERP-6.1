@@ -9,7 +9,7 @@ Licéncia GPL 3
   >Esta versión construye por defecto el fichero de permisos
   
   <strong>Modificaciones:</strong><br>
-<a href="https://github.com/jaumarar/OpenERP-6.1/blob/master/openerp_dia/codegen_openerp_61_v1.py#L236">Jerarquización de menús</a><br>
+<a href="https://github.com/jaumarar/OpenERP-6.1/blob/master/openerp_dia/codegen_openerp_61_v2.py#L310">Jerarquización de menús</a><br>
   <br><strong>Menú XML:</strong><br>
   ![MenuXML](http://i.imgur.com/QJkVHbK.jpg)
   <br><strong>Menú webclient:</strong><br>
