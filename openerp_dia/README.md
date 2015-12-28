@@ -3,6 +3,11 @@ Licéncia GPL 3
 >Problemas conocidos: No está contemplado el uso de una jerarquización de más de 2 niveles vacios:<br>
  ✓ MenuModulo/MenuVacio1/Clase1<br>
  X ~~MenuModulo/MenuVacio1/MenuVacio2/Clase1~~<br>
+ 
+###codegen_openerp_61_v3.py
+  >Retoques a la v2:
+  Ahora los campos one2many y many2many por defecto son mostrados en la vista xml.<br>
+  Eliminados en los nombres de los separadores los ' y espacios iniciales/finales
 
 ###codegen_openerp_61_v2.py
   >Basado en el generador <a href="https://code.launchpad.net/~openerp-commiter/openobject-addons/extra-6.0">OERP 6.0</a> (no permite jerarquía de menús 6.1).<br>
