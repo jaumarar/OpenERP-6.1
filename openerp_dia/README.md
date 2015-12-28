@@ -4,7 +4,7 @@ Licéncia GPL 3
  ✓ MenuModulo/MenuVacio1/Clase1<br>
  X ~~MenuModulo/MenuVacio1/MenuVacio2/Clase1~~<br>
  
-###codegen_openerp_61_v3.py
+###codegen_openerp_61_v3.py (2015/12/29)
   >Retoques a la v2:
   Ahora los campos one2many y many2many por defecto son mostrados en la vista xml.<br>
   Eliminados en los nombres de los separadores los ' y espacios iniciales/finales
