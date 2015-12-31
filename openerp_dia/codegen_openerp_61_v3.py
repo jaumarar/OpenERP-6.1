@@ -307,13 +307,14 @@ class OpenERPRenderer(ObjRenderer) :
         for sk in self.klass_names:
             result += self.view_class_get(sk, self.klasses[sk])
 		########################################################################
-        result += "<!-- ## MENUS ###################################################### -->"
+        result += """<!-- ## MENUS ###################################################### -->
+        """
         # arrayGlobal al que ir añadiendo el nombre y el id de cada uno de los menus que encontremos, así como el base del módulo
         self.arrayGlobal = { 'module_menu_id' : None,'module_menu_name':None, 'menuitems':{}}
         # Recorremos todas las clases del diagrama para generaremos los menus
         for sk in self.klass_names:
             result += self.menu_class_get(sk, self.klasses[sk])
-        result += "<!-- ############################################################### -->"
+        result += '        <!-- ############################################################### -->'
         ########################################################################
         result += """
 </data>
@@ -344,7 +345,8 @@ class OpenERPRenderer(ObjRenderer) :
             # Se añade también a los menus normales
             self.arrayGlobal['menuitems'][data['module_menu_name']] = {'menu_name': data['module_menu_name'], 'menu_id':data['module_menu_id']}
             # Añadir <menuitem>
-            menus += """<menuitem name="%(module_menu_name)s" id="%(module_menu_id)s"/>""" % data
+            menus += """<menuitem name="%(module_menu_name)s" id="%(module_menu_id)s"/>
+""" % data
 
         # Añadir el actual al registro
         if data['menu_name'] not in self.arrayGlobal['menuitems']:
@@ -363,15 +365,18 @@ class OpenERPRenderer(ObjRenderer) :
                 data['padre_id'] += data['padre_name'].lower().replace(' ','_')
                 self.arrayGlobal['menuitems'][data['padre_name']] = {'menu_name': data['padre_name'], 'menu_id':data['padre_id']}
                 # Añadir <menuitem>
-                menus += """<menuitem name="%(padre_name)s" id="%(padre_id)s" parent="%(module_menu_id)s"/>""" % data
+                menus += """        <menuitem name="%(padre_name)s" id="%(padre_id)s" parent="%(module_menu_id)s"/>
+""" % data
             # Buscar al padre (que ya habrá sido creado) y asignarlo
             data['padre_id'] = self.arrayGlobal['menuitems'][data['padre_name']]['menu_id']
 
         # Segun tenga padre o no...
         if data['padre_name'] is not None:
-            menus += """<menuitem name="%(menu_name)s" id="%(menu_id)s" action="%(menu_action)s" parent="%(padre_id)s"/>""" % data
+            menus += """            <menuitem name="%(menu_name)s" id="%(menu_id)s" action="%(menu_action)s" parent="%(padre_id)s"/>
+""" % data
         else:
-            menus += """<menuitem name="%(menu_name)s" id="%(menu_id)s" action="%(menu_action)s"/>""" % data
+            menus += """            <menuitem name="%(menu_name)s" id="%(menu_id)s" action="%(menu_action)s"/>
+""" % data
         return menus
 ### FIN MENUS ###################################################################################################################################
 
