@@ -56,6 +56,10 @@ echo -e "["$V"cURL"$B"] Instalado...";
 apt-get install -y curl > /dev/null
 echo -e "["$V"cURL"$B"] Instalado";
 
+echo -e "["$V"OpenERP"$B"] Instalando dependencias...";
+apt-get install -y python-hippocanvas
+echo -e "["$V"OpenERP"$B"] Dependencias instaladas.";
+
 if [ -f $ORPCLIENTEFICH.tar.gz ];then
     echo -e "["$V"OpenERP"$B"] Source cliente encontrado";
 else
